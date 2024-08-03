@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .audio-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        .audio-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        audio {
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-container">
+        <div class="audio-title">{{ name }}</div>
+        <audio src="{{ url_for('static', path=name) }}.mp3" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <a class="audio-title" href="http://127.0.0.1:8000/tracks">Return to home</a>
+
+    </div>
+</body>
+</html>
